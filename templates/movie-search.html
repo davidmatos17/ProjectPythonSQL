@@ -4,8 +4,8 @@
 <p><b>Search expression:</b>"{{ search.expr }}"</p>
 <p>
 <ul>
-  {% for m in movies %}
-  <li><a href="/movies/{{ m.MovieId }}">{{ m.Title }}</a></li>
+  {% for route in routes %}
+  <li><a href="/routes/{{ route.nome }}">{{ route.nome }}</a></li>
   {% endfor %}
 </ul>
 </p>
