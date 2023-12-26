@@ -130,3 +130,15 @@ def route_F():
         abort(404)  # or handle it in another way, e.g., render an error template
 
     return render_template('routes-list.html', routes=routes)
+
+@APP.route('/stops/')
+def paragens():
+    stops = db.execute(
+        '''
+        Select nomeDaParagem as Name
+        From Paragens
+        Order by Name
+        ''').fetchall()
+    if not stops:
+        abort(404)  # or handle it in another way, e.g., render an error template
+    return render_template('stops-list.html', stops=stops)
