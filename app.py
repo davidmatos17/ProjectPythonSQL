@@ -24,7 +24,7 @@ def index():
     return render_template('index.html',stats=stats)
 
 # Routes
-@APP.route('templates/routes-list.html')
+@APP.route('/routes/')
 def list_routes():
     routes = db.execute(
       '''
