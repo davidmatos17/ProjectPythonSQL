@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1>Station Search</h1>
+{%for s in stations%}
+<p><b>Station -></b> {{s.Name}}</p>
+<p><b>Zone -></b> {{s.Zone}}</p>
+<p><b>ID -></b> {{s.ID}}</p>
+{%endfor%}
+
 <table>
   <tr>
-    <th>Station</th>
-    <th>Stop ID</th>
-    <th>Zone</th>
     <th>Routes</th>
   </tr>
-  {% for stop in stations %}
+  {% for stop in paragens %}
     <tr>
-      <td>{{ stop.Name }}</td>
-      <td>{{ stop.ID }}</td>
-      <td>{{ stop.Zone }}</td>
       <td>
-       {{ stop.Route }}
+        <a href="/routes/{{ stop.Route }}">{{ stop.Route }}</a>
       </td>
     </tr>
   {% endfor %}
